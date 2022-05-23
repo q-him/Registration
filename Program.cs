@@ -25,6 +25,4 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.UseRestApi();
-
 app.Run();
