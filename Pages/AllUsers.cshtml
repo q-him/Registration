@@ -1,0 +1,31 @@
+﻿@page
+@model AllUsersModel
+@{
+    ViewData["Title"] = "Список пользователей";
+}
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Никнейм</th>
+            <th>Email</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Дата рождения</th>
+        </tr>
+        @foreach (var user in Model.DB.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Nickname</td>
+                <td>@user.Email</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Phone</td>
+                <td>@user.Born.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+</div>
